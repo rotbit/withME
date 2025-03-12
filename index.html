@@ -741,6 +741,260 @@
         background-color: rgba(255, 107, 139, 0.05);
         transform: translateY(-2px);
       }
+
+      /* 添加位置相关样式 */
+      .location-filter {
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        background-color: #fff;
+        border-bottom: 1px solid rgba(255, 107, 139, 0.1);
+      }
+
+      .location-icon {
+        color: var(--primary-color);
+        font-size: 18px;
+        margin-right: 8px;
+      }
+
+      .location-text {
+        font-size: 14px;
+        color: var(--text-color);
+        flex: 1;
+      }
+
+      .distance-filter {
+        color: var(--primary-color);
+        font-size: 13px;
+        border: 1px solid var(--primary-color);
+        padding: 4px 10px;
+        border-radius: 15px;
+        background-color: rgba(255, 107, 139, 0.05);
+        cursor: pointer;
+      }
+
+      .distance-dropdown {
+        position: absolute;
+        top: 100%;
+        right: 15px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+        padding: 10px 0;
+        display: none;
+        width: 120px;
+      }
+
+      .distance-option {
+        padding: 8px 15px;
+        font-size: 13px;
+        color: var(--text-color);
+        cursor: pointer;
+      }
+
+      .distance-option:hover {
+        background-color: rgba(255, 107, 139, 0.05);
+      }
+
+      .distance-filter.active + .distance-dropdown {
+        display: block;
+      }
+
+      .player-location {
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+        font-size: 12px;
+        color: #888;
+      }
+
+      .player-location i {
+        font-size: 12px;
+        margin-right: 4px;
+        color: var(--primary-color);
+      }
+
+      .nearby-filter {
+        display: flex;
+        padding: 15px;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        background: white;
+        border-bottom: 1px solid rgba(255, 107, 139, 0.1);
+      }
+
+      .nearby-filter::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nearby-option {
+        padding: 6px 15px;
+        margin-right: 10px;
+        background-color: #f9f2f4;
+        border-radius: 20px;
+        font-size: 13px;
+        color: var(--text-color);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 1px solid transparent;
+      }
+
+      .nearby-option.active {
+        background: linear-gradient(
+          45deg,
+          var(--gradient-start),
+          var(--gradient-end)
+        );
+        color: white;
+        box-shadow: 0 3px 10px rgba(255, 107, 139, 0.2);
+      }
+
+      .nearby-option:hover:not(.active) {
+        border-color: var(--primary-color);
+        background-color: rgba(255, 107, 139, 0.05);
+      }
+
+      .map-view-btn {
+        position: fixed;
+        bottom: 70px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(
+          45deg,
+          var(--gradient-start),
+          var(--gradient-end)
+        );
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 3px 15px rgba(255, 107, 139, 0.3);
+        z-index: 10;
+        font-size: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .map-view-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 20px rgba(255, 107, 139, 0.4);
+      }
+
+      /* 地图页面样式 */
+      .map-container {
+        width: 100%;
+        height: calc(100vh - 120px);
+        background-color: #f0f0f0;
+        position: relative;
+      }
+
+      .map-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #888;
+        font-size: 14px;
+      }
+
+      .map-placeholder i {
+        font-size: 40px;
+        margin-bottom: 10px;
+        color: var(--primary-color);
+      }
+
+      .map-bottom-sheet {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        border-radius: 20px 20px 0 0;
+        padding: 20px;
+        box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .map-sheet-handle {
+        width: 40px;
+        height: 5px;
+        background-color: #ddd;
+        border-radius: 3px;
+        margin: 0 auto 15px;
+      }
+
+      .map-nearby-title {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: var(--text-color);
+      }
+
+      .map-nearby-list {
+        display: flex;
+        overflow-x: auto;
+        gap: 15px;
+        padding-bottom: 10px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      .map-nearby-list::-webkit-scrollbar {
+        display: none;
+      }
+
+      .map-nearby-item {
+        flex: 0 0 auto;
+        width: 120px;
+        background: white;
+        border-radius: 15px;
+        padding: 10px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .map-nearby-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 107, 139, 0.15);
+      }
+
+      .map-nearby-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 15px;
+        overflow: hidden;
+        margin: 0 auto 8px;
+      }
+
+      .map-nearby-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .map-nearby-name {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text-color);
+        margin-bottom: 3px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .map-nearby-distance {
+        font-size: 12px;
+        color: #888;
+      }
     </style>
   </head>
   <body>
@@ -749,12 +1003,47 @@
       <div class="page active" id="home-page">
         <div class="header">心灵陪伴</div>
 
+        <div class="location-filter">
+          <div class="location-icon">📍</div>
+          <div class="location-text">上海市浦东新区</div>
+          <div class="distance-filter" onclick="toggleDistanceDropdown()">
+            5km内 ▼
+            <div class="distance-dropdown">
+              <div class="distance-option" onclick="setDistance('1km内')">
+                1km内
+              </div>
+              <div class="distance-option" onclick="setDistance('3km内')">
+                3km内
+              </div>
+              <div class="distance-option" onclick="setDistance('5km内')">
+                5km内
+              </div>
+              <div class="distance-option" onclick="setDistance('10km内')">
+                10km内
+              </div>
+              <div class="distance-option" onclick="setDistance('不限')">
+                不限
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="search-bar">
           <input
             type="text"
             class="search-input"
             placeholder="搜索陪伴服务或陪伴师"
           />
+        </div>
+
+        <div class="nearby-filter">
+          <div class="nearby-option active">全部</div>
+          <div class="nearby-option">1km内</div>
+          <div class="nearby-option">3km内</div>
+          <div class="nearby-option">5km内</div>
+          <div class="nearby-option">新人</div>
+          <div class="nearby-option">高分</div>
+          <div class="nearby-option">价格</div>
         </div>
 
         <div class="category-nav">
@@ -798,6 +1087,7 @@
                 <span class="tag">善于倾听</span>
               </div>
               <div class="player-price">¥68/小时</div>
+              <div class="player-location"><i>📍</i> 徐家汇 · 0.8km</div>
             </div>
             <div class="player-rating">★ 4.9</div>
           </div>
@@ -817,6 +1107,7 @@
                 <span class="tag">情感咨询</span>
               </div>
               <div class="player-price">¥88/小时</div>
+              <div class="player-location"><i>📍</i> 静安寺 · 2.3km</div>
             </div>
             <div class="player-rating">★ 4.8</div>
           </div>
@@ -836,10 +1127,13 @@
                 <span class="tag">解压减压</span>
               </div>
               <div class="player-price">¥75/小时</div>
+              <div class="player-location"><i>📍</i> 人民广场 · 3.5km</div>
             </div>
             <div class="player-rating">★ 4.7</div>
           </div>
         </div>
+
+        <div class="map-view-btn" onclick="showPage('map-page')">🗺️</div>
       </div>
 
       <!-- 陪伴详情页 -->
@@ -886,13 +1180,14 @@
                 <span class="tag">善于倾听</span>
               </div>
               <div>接单率: 98% | 评分: 4.9</div>
+              <div class="player-location"><i>📍</i> 徐家汇 · 距您0.8km</div>
             </div>
           </div>
 
           <div>
             <h3>个人介绍</h3>
             <p>
-              大家好，我是小雨，性格温柔，善于倾听。平时喜欢读书、听音乐，能够耐心地听您分享生活中的点滴或烦恼。我相信每个人都需要一个能够倾诉的对象，希望能成为您生活中的一抹温暖。
+              大家好，我是小雨，性格温柔，善于倾听。平时喜欢读书、听音乐，能够耐心地听您分享生活中的点滴或烦恼。我相信每个人都需要一个能够倾诉的对象，希望能成为您生活中的一抹温暖。常在徐家汇附近的茶馆和咖啡厅，欢迎来找我聊天解忧。
             </p>
           </div>
 
@@ -1230,6 +1525,82 @@
         </div>
       </div>
 
+      <!-- 地图页面 -->
+      <div class="page" id="map-page">
+        <div class="header">
+          <span class="back-btn" onclick="showPage('home-page')">←</span>
+          附近的陪伴师
+        </div>
+
+        <div class="map-container">
+          <div class="map-placeholder">
+            <i>🗺️</i>
+            <div>地图加载中...</div>
+          </div>
+
+          <div class="map-bottom-sheet">
+            <div class="map-sheet-handle"></div>
+            <div class="map-nearby-title">附近的陪伴师</div>
+            <div class="map-nearby-list">
+              <div class="map-nearby-item">
+                <div class="map-nearby-avatar">
+                  <img
+                    src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                    alt="小雨"
+                  />
+                </div>
+                <div class="map-nearby-name">小雨</div>
+                <div class="map-nearby-distance">0.8km</div>
+              </div>
+
+              <div class="map-nearby-item">
+                <div class="map-nearby-avatar">
+                  <img
+                    src="https://images.unsplash.com/photo-1513207565459-d7f36bfa1222?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                    alt="晴晴"
+                  />
+                </div>
+                <div class="map-nearby-name">晴晴</div>
+                <div class="map-nearby-distance">2.3km</div>
+              </div>
+
+              <div class="map-nearby-item">
+                <div class="map-nearby-avatar">
+                  <img
+                    src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                    alt="夏夏"
+                  />
+                </div>
+                <div class="map-nearby-name">夏夏</div>
+                <div class="map-nearby-distance">3.5km</div>
+              </div>
+
+              <div class="map-nearby-item">
+                <div class="map-nearby-avatar">
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                    alt="米米"
+                  />
+                </div>
+                <div class="map-nearby-name">米米</div>
+                <div class="map-nearby-distance">4.2km</div>
+              </div>
+
+              <div class="map-nearby-item">
+                <div class="map-nearby-avatar">
+                  <img
+                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                    alt="安安"
+                  />
+                </div>
+                <div class="map-nearby-name">安安</div>
+                <div class="map-nearby-distance">4.8km</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- 底部导航 -->
       <div class="tab-bar">
         <div class="tab-item active" onclick="switchTab(this, 'home-page')">
@@ -1239,6 +1610,10 @@
         <div class="tab-item" onclick="switchTab(this, 'category-page')">
           <div class="tab-icon">🍵</div>
           <span>分类</span>
+        </div>
+        <div class="tab-item" onclick="switchTab(this, 'map-page')">
+          <div class="tab-icon">🗺️</div>
+          <span>附近</span>
         </div>
         <div class="tab-item" onclick="switchTab(this, 'order-list-page')">
           <div class="tab-icon">📋</div>
@@ -1265,8 +1640,10 @@
         if (pageId === "home-page") {
           switchTab(document.querySelector(".tab-item:nth-child(1)"), pageId);
         } else if (pageId === "profile-page") {
-          switchTab(document.querySelector(".tab-item:nth-child(4)"), pageId);
+          switchTab(document.querySelector(".tab-item:nth-child(5)"), pageId);
         } else if (pageId === "order-list-page") {
+          switchTab(document.querySelector(".tab-item:nth-child(4)"), pageId);
+        } else if (pageId === "map-page") {
           switchTab(document.querySelector(".tab-item:nth-child(3)"), pageId);
         }
       }
@@ -1281,6 +1658,46 @@
         // 显示对应页面
         showPage(pageId);
       }
+
+      // 距离筛选功能
+      function toggleDistanceDropdown() {
+        const distanceFilter = document.querySelector(".distance-filter");
+        distanceFilter.classList.toggle("active");
+      }
+
+      function setDistance(distance) {
+        const distanceFilter = document.querySelector(".distance-filter");
+        distanceFilter.textContent = distance + " ▼";
+        distanceFilter.classList.remove("active");
+
+        // 这里可以添加根据距离筛选的逻辑
+        console.log("筛选距离设置为:", distance);
+      }
+
+      // 附近筛选选项切换
+      document.addEventListener("DOMContentLoaded", function () {
+        const nearbyOptions = document.querySelectorAll(".nearby-option");
+        nearbyOptions.forEach((option) => {
+          option.addEventListener("click", function () {
+            nearbyOptions.forEach((opt) => opt.classList.remove("active"));
+            this.classList.add("active");
+
+            // 这里可以添加根据选项筛选的逻辑
+            console.log("选择筛选条件:", this.textContent);
+          });
+        });
+
+        // 点击页面其他区域关闭距离下拉框
+        document.addEventListener("click", function (event) {
+          const distanceFilter = document.querySelector(".distance-filter");
+          if (
+            !event.target.closest(".distance-filter") &&
+            distanceFilter.classList.contains("active")
+          ) {
+            distanceFilter.classList.remove("active");
+          }
+        });
+      });
     </script>
   </body>
 </html>
